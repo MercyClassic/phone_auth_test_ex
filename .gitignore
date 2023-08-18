@@ -1,0 +1,11 @@
+.env
+
+.idea
+
+dist
+
+logs
+
+__pycache__
+
+static
