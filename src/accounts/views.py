@@ -20,9 +20,6 @@ class AuthorizationAPIView(GenericAPIView):
     serializer_class = AuthorizationSerializer
     permission_classes = [AllowAny]
 
-    def get(self, request, *args, **kwargs):
-        return Response(status=status.HTTP_400_BAD_REQUEST)
-
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
@@ -52,7 +49,7 @@ class VerifyAPIView(GenericAPIView):
 
             user_id = service.verify(verify_code=code)
             if user_id:
-                session_id = service.create_session_id_by_user_id(user_id=user_id)
+                session_id = service.create_session_by_user_id(user_id=user_id)
 
                 response = Response(status=status.HTTP_200_OK)
                 response.set_cookie('sessionid', session_id, httponly=True)

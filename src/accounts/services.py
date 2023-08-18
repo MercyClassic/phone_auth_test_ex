@@ -58,11 +58,11 @@ class AuthService:
         self.repo.delete_verify_code(verify_code=verify_code, user_id=user_id)
         return user_id
 
-    def create_session_id_by_user_id(self, user_id: int) -> Type[Session]:
+    def create_session_by_user_id(self, user_id: int) -> Type[Session]:
         session = self.repo.get_session_by_user_id(user_id)
         if not session:
             session = self.repo.create_session(user_id)
-        return session
+        return session.session_key
 
     def get_invitation_code(self, user: AuthModel) -> str | None:
         if not user.is_invited:
