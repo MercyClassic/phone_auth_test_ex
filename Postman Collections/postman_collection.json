@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "c30659b5-ffa0-4187-a7ca-86c9bb28821f",
-		"name": "hammer system test",
+		"name": "hammer system test exercise",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "28542135"
 	},
@@ -133,7 +133,7 @@
 	"variable": [
 		{
 			"key": "host",
-			"value": "http://localhost:8000",
+			"value": "https://mercyclassic.pythonanywhere.com",
 			"type": "string"
 		}
 	]
